@@ -14,7 +14,7 @@ public class Main {
         SimpleHashtables ht = new SimpleHashtables();
         ht.put("jones", janejones);
         ht.put("Doe", johnDoe);
-        ht.put("Wilson", marySmith);
+        ht.put("Wilson", MikeWilson);
         ht.put("Smith", marySmith);
 
         ht.printHashtable();
