@@ -1,7 +1,6 @@
 import hashtables.Employee;
 import hashtables.simpleHashtables.SimpleHashtables;
 
-
 public class Main {
     public static void main(String[] args) {
 
@@ -19,5 +18,6 @@ public class Main {
 
         ht.printHashtable();
         System.out.println("Retrieve key Wilson" + ht.get("Wilson"));
+        System.out.println("Retrieve key Smith" + ht.get("Smith"));
     }
 }
