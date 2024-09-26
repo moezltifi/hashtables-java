@@ -1,4 +1,5 @@
 import hashtables.Employee;
+import hashtables.chainedHashtable.ChainedHashtable;
 import hashtables.simpleHashtables.SimpleHashtables;
 
 public class Main {
@@ -8,7 +9,6 @@ public class Main {
         Employee johnDoe = new Employee("John", "Doe", 7);
         Employee marySmith = new Employee("Mary", "Smith", 80);
         Employee MikeWilson = new Employee("Mike", "Wilson", 47);
-        Employee billEnd = new Employee("bill", "End", 20000);
 
         SimpleHashtables ht = new SimpleHashtables();
         ht.put("jones", janejones);
@@ -22,10 +22,23 @@ public class Main {
 
         ht.remove("jones");
         ht.remove("Wilson");
-
-
         ht.printHashtable();
-
         System.out.println("Retrieve key Smith" + ht.get("Smith"));
+        System.out.println("ChainedHashtable");
+
+        ChainedHashtable cht = new ChainedHashtable();
+        cht.put("jones", janejones);
+        cht.put("Doe", johnDoe);
+        cht.put("Wilson", MikeWilson);
+        cht.put("Smith", marySmith);
+
+        cht.printHashtable();
+        System.out.println("Retrieve key Wilson" + cht.get("Wilson"));
+        System.out.println("Retrieve key Smith" + cht.get("Smith"));
+
+        cht.remove("jones");
+        cht.printHashtable();
+        System.out.println("Retrieve key Smith" + cht.get("Smith"));
+
     }
 }

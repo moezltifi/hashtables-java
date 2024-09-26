@@ -1,6 +1,7 @@
 package hashtables.simpleHashtables;
 
 import hashtables.Employee;
+import hashtables.StoredEmployee;
 
 public class SimpleHashtables {
     private StoredEmployee[] hashtable;  // Corrected name

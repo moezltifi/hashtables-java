@@ -1,6 +1,4 @@
-package hashtables.simpleHashtables;
-
-import hashtables.Employee;
+package hashtables;
 
 public class StoredEmployee {  // Added 'class' keyword
     public String key;
