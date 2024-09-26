@@ -37,6 +37,16 @@ public class SimpleHashtables {
         return hashtable[hashedKey].employee;
     }
 
+    public Employee remove(String key){
+        int hashedKey = findKey(key);
+        if (hashedKey == - 1){
+            return null;
+        }
+        Employee employee = hashtable[hashedKey].employee;
+        hashtable[hashedKey]= null;
+        return employee;
+    }
+
     private int hashKey(String key) {
         return key.length() % hashtable.length;
     }
@@ -52,10 +62,17 @@ public class SimpleHashtables {
         } else {
             hashedKey++;
         }
-        while (hashtable[hashedKey] != null && hashedKey != stopIndex && !hashtable[hashedKey].key.equals(key)) {
+        while (hashtable[hashedKey] != null &&
+                hashedKey != stopIndex &&
+                !hashtable[hashedKey].key.equals(key)) {
             hashedKey = (hashedKey + 1) % hashtable.length;
         }
-        return (stopIndex == hashedKey) ? -1 : hashedKey;
+        if (hashtable[hashedKey] != null &&
+                hashtable[hashedKey].key.equals(key)){
+                return hashedKey;
+        }else {
+            return -1;
+        }
     }
 
     private boolean occupied(int index) {
